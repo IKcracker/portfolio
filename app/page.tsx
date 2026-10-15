@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProjectScreenshot from "./project-screenshot";
 import InteractionLab from "./interaction-lab";
 import SiteInteractions from "./site-interactions";
+import KineticField from "./kinetic-field";
 import { PortfolioExperience, DesignVersionToggle } from "./portfolio-experience";
 import type { ReactNode } from "react";
 
@@ -42,10 +43,13 @@ function SharedPortfolioContent() { return <div className="site">
         <p className="location"><i/> Based in Pretoria, South Africa</p>
       </div>
       <div className="hero-photo">
+        <KineticField/>
+        <div className="kinetic-hud" aria-hidden="true">INTERACTIVE FIELD / MOVE YOUR CURSOR<br/>ENGINEERING MEETS EXPLORATION</div>
         <Image src="/images/kutullo-hero-832c8ce.webp" alt="Black-and-white close-up portrait of Kutullo Moropane" width={610} height={724} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 45vw" className="portrait" priority/>
         <span className="vertical-label">Software engineer / 2026</span><span className="portrait-index">KM / 01</span>
       </div>
     </section>
+    <div className="kinetic-ticker" aria-hidden="true"><div className="kinetic-ticker-track">{Array.from({length:4},(_,i)=><span key={i}>DESIGN WITH INTENTION <b>✳</b> BUILD WITH PURPOSE <b>✳</b> SYSTEMS THAT WORK <b>✳</b> MADE TO EXPLORE <b>✳</b></span>)}</div></div>
     <section className="focus container" aria-label="Professional focus">
       <p className="small-label">Selected focus</p><div className="focus-grid">{focus.map(([number,title,description])=><div className="focus-item" key={number}><span className="index">{number}</span><h2>{title}</h2><p>{description}</p></div>)}</div>
     </section>

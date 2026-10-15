@@ -8,7 +8,7 @@ const STORAGE_KEY = "kutullo-portfolio-design";
 const VersionContext = createContext<VersionContextValue | null>(null);
 
 export function PortfolioExperience({ children }: { children: ReactNode }) {
-  const [version, setVersion] = useState<DesignVersion>("editorial");
+  const [version, setVersion] = useState<DesignVersion>("glass");
 
   useEffect(() => {
     try {
@@ -17,7 +17,7 @@ export function PortfolioExperience({ children }: { children: ReactNode }) {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (query === "v2" || query === "glass") setVersion("glass");
       else if (query === "v1" || query === "editorial") setVersion("editorial");
-      else if (saved === "glass") setVersion("glass");
+      else if (saved === "glass" || saved === "editorial") setVersion(saved);
     } catch {
       // Browsers with storage disabled can still switch versions in this session.
     }
@@ -68,8 +68,13 @@ export function DesignVersionToggle() {
         aria-pressed={context.version === "glass"}
         title="Switch to Version 2: glass"
       >
-        <span>02</span><span className="design-version-name">Glass</span>
+        <span>02</span><span className="design-version-name">Studio</span>
       </button>
     </div>
   );
+}
+
+export function usePortfolioDesign(): DesignVersion {
+  const context = useContext(VersionContext);
+  return context?.version ?? "editorial";
 }
