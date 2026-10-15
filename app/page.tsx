@@ -1,5 +1,7 @@
 import Image from "next/image";
 import ProjectScreenshot from "./project-screenshot";
+import GlassPortfolio from "./glass-portfolio";
+import { PortfolioExperience, DesignVersionToggle } from "./portfolio-experience";
 import type { ReactNode } from "react";
 
 const projects = [
@@ -21,12 +23,12 @@ const services = [
 function Arrow({ diagonal=false }:{ diagonal?:boolean }) { return <svg aria-hidden="true" width="18" height="18" viewBox="0 0 20 20" fill="none">{diagonal ? <path d="M4.5 15.5 15.5 4.5M6 4.5h9.5V14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/> : <path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>}</svg>; }
 function Kicker({ index,children }:{index:string;children:ReactNode}) {return <p className="kicker"><span>{index}</span><span>/</span>{children}</p>;}
 const enquiry = "https://www.codetechagency.com/contact";
-export default function Home() { return <div className="site">
+function EditorialPortfolio() { return <div className="site">
   <a className="skip" href="#main">Skip to content</a>
   <header className="header container" id="top">
     <a href="#top" className="logo" aria-label="Kutullo Moropane home">kutullo<span>.</span></a>
     <nav className="nav-desktop" aria-label="Main navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
-    <a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
+    <DesignVersionToggle/><a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
     <details className="nav-mobile"><summary>Menu <span>+</span></summary><nav aria-label="Mobile navigation"><a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></details>
   </header>
   <main id="main">
@@ -77,3 +79,5 @@ export default function Home() { return <div className="site">
   </main>
   <footer className="footer"><div className="container footer-grid"><a href="#top" className="logo">kutullo<span>.</span></a><p>© 2026 Kutullo Moropane. Built with intention.</p><nav aria-label="Footer navigation"><a href="https://github.com/IKcracker" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.codetechagency.com/" target="_blank" rel="noopener noreferrer">Code Tech Agency</a><a href="#top">Back to top ↑</a></nav></div></footer>
 </div>; }
+
+export default function Home() { return <PortfolioExperience editorial={<EditorialPortfolio/>} glass={<GlassPortfolio/>} />; }
