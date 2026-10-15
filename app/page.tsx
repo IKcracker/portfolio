@@ -38,7 +38,7 @@ export default function Home() { return <div className="site">
         <p className="location"><i/> Based in Pretoria, South Africa</p>
       </div>
       <div className="hero-photo">
-        <Image src="/images/kutullo-head.webp" alt="Black-and-white close-up portrait of Kutullo Moropane" width={610} height={724} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 45vw" className="portrait" priority/>
+        <Image src="/images/kutullo-hero-832c8ce.webp" alt="Black-and-white close-up portrait of Kutullo Moropane" width={610} height={724} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 45vw" className="portrait" priority/>
         <span className="vertical-label">Software engineer / 2026</span><span className="portrait-index">KM / 01</span>
       </div>
     </section>
