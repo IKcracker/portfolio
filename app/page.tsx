@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ProjectScreenshot from "./project-screenshot";
 import type { ReactNode } from "react";
 
 const projects = [
@@ -53,21 +54,11 @@ export default function Home() { return <div className="site">
           <div className="project-browser-bar" aria-hidden="true">
             <span className="browser-controls"><i/><i/><i/></span>
             <span className="project-domain">{new URL(item.url).hostname}</span>
-            <span className="project-live-label">LIVE PAGE</span>
+            <span className="project-live-label">REAL PAGE</span>
           </div>
-          <div className="project-live-viewport">
-            <iframe
-              title={item.name+" live website preview"}
-              src={item.url}
-              loading="lazy"
-              tabIndex={-1}
-              aria-hidden="true"
-              sandbox="allow-same-origin allow-scripts allow-forms"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
+          <ProjectScreenshot name={item.name} url={item.url} />
           <a className="project-art-cover" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={"Open the "+item.name+" live website in a new tab"}>
-            <span className="project-art-label">Live website preview</span>
+            <span className="project-art-label">View live demo</span>
             <span className="art-arrow"><Arrow diagonal/></span>
           </a>
         </div>
