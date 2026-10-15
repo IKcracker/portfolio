@@ -7,6 +7,7 @@ import "./kinetic.css";
 import "./kinetic-sections.css";
 import "./kinetic-mobile.css";
 import "./system-universe.css";
+import "./universe-entry.css";
 
 export const metadata: Metadata = {
   title: "Kutullo Moropane — Software Engineer & Founder",
