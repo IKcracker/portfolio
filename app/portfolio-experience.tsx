@@ -7,7 +7,7 @@ type VersionContextValue = { version: DesignVersion; changeVersion: (version: De
 const STORAGE_KEY = "kutullo-portfolio-design";
 const VersionContext = createContext<VersionContextValue | null>(null);
 
-export function PortfolioExperience({ editorial, glass }: { editorial: ReactNode; glass: ReactNode }) {
+export function PortfolioExperience({ children }: { children: ReactNode }) {
   const [version, setVersion] = useState<DesignVersion>("editorial");
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function PortfolioExperience({ editorial, glass }: { editorial: ReactNode
   return (
     <VersionContext.Provider value={{ version, changeVersion }}>
       <div data-portfolio-version={version}>
-        {version === "editorial" ? editorial : glass}
+        {children}
       </div>
     </VersionContext.Provider>
   );
