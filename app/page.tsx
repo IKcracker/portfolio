@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ProjectScreenshot from "./project-screenshot";
-import InteractionLab from "./interaction-lab";
+import SystemUniverse from "./system-universe";
 import SiteInteractions from "./site-interactions";
 import KineticField from "./kinetic-field";
 import { PortfolioExperience, DesignVersionToggle } from "./portfolio-experience";
@@ -40,6 +40,7 @@ function SharedPortfolioContent() { return <div className="site">
         <p className="role">Software engineer <span>•</span> Founder <span>•</span> Builder</p>
         <p className="hero-lead">I turn complex business challenges into simple, thoughtful digital products — from web platforms to connected CRMs and automation.</p>
         <div className="hero-actions"><a href="#work" className="underlined">Explore my work <Arrow/></a><a className="underlined" href="#contact">Let&apos;s discuss your project <Arrow diagonal/></a></div>
+        <a href="#universe" className="studio-universe-cta"><span>✳</span> ENTER THE 3D UNIVERSE <span>↘</span></a>
         <p className="location"><i/> Based in Pretoria, South Africa</p>
       </div>
       <div className="hero-photo">
@@ -53,6 +54,7 @@ function SharedPortfolioContent() { return <div className="site">
     <section className="focus container" aria-label="Professional focus">
       <p className="small-label">Selected focus</p><div className="focus-grid">{focus.map(([number,title,description])=><div className="focus-item" key={number}><span className="index">{number}</span><h2>{title}</h2><p>{description}</p></div>)}</div>
     </section>
+    <SystemUniverse/>
     <section id="work" className="work area" aria-labelledby="work-title"><div className="container">
       <Kicker index="02">Selected projects</Kicker><div className="section-heading"><h2 id="work-title">Work worth showing<span>.</span></h2><p>A selection of the software products and digital experiences I&apos;m building.</p></div>
       <div className="project-list">{projects.map(item=><article className="project" key={item.index}>
@@ -80,8 +82,8 @@ function SharedPortfolioContent() { return <div className="site">
       </div>
     </section>
     <section id="services" className="services area" aria-labelledby="services-title"><div className="container"><Kicker index="04">How I can help</Kicker><div className="section-heading"><h2 id="services-title">Thoughtful work. <em>Real value.</em></h2><p>From a fresh idea to a better workflow, I focus on solutions that move things forward.</p></div><div className="service-grid">{services.map(([number,title,description])=><div className="service" key={number}><span className="index">{number}</span><h3>{title}</h3><p>{description}</p><a href={enquiry} target="_blank" rel="noopener noreferrer" aria-label={"Enquire about "+title}><Arrow diagonal/></a></div>)}</div></div></section>
-    <InteractionLab/>
-    <section id="contact" className="contact" aria-labelledby="contact-title"><div className="container contact-grid"><div><Kicker index="06">Next step</Kicker><h2 id="contact-title">Have an idea?<br/><em>Let&apos;s make it work.</em></h2><p>Tell me what you&apos;re trying to achieve. We can work out the right next step together.</p></div><div className="contact-action"><a href={enquiry} target="_blank" rel="noopener noreferrer">Start a conversation <Arrow diagonal/></a><span>Project enquiries are handled through Code Tech Agency.</span></div></div></section>
+
+    <section id="contact" className="contact" aria-labelledby="contact-title"><div className="container contact-grid"><div><Kicker index="05">Next step</Kicker><h2 id="contact-title">Have an idea?<br/><em>Let&apos;s make it work.</em></h2><p>Tell me what you&apos;re trying to achieve. We can work out the right next step together.</p></div><div className="contact-action"><a href={enquiry} target="_blank" rel="noopener noreferrer">Start a conversation <Arrow diagonal/></a><span>Project enquiries are handled through Code Tech Agency.</span></div></div></section>
   </main>
   <footer className="footer"><div className="container footer-grid"><a href="#top" className="logo">kutullo<span>.</span></a><p>© 2026 Kutullo Moropane. Built with intention.</p><nav aria-label="Footer navigation"><a href="https://github.com/IKcracker" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.codetechagency.com/" target="_blank" rel="noopener noreferrer">Code Tech Agency</a><a href="#top">Back to top ↑</a></nav></div></footer>
 </div>; }

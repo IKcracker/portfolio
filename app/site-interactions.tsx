@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent a
 
 const destinations = [
   { label: "Explore selected work", hint: "Projects & real demos", href: "#work", keywords: "portfolio cases demos vela noval vaya" },
-  { label: "Discover the interactive lab", hint: "See how systems work", href: "#explore", keywords: "how automation works workflow logistics build crm" },
+  { label: "Explore the interactive 3D universe", hint: "Rotate a living software system", href: "#universe", keywords: "how automation works workflow logistics build crm" },
   { label: "About Kutullo", hint: "Person behind the code", href: "#about", keywords: "about biography developer engineer" },
   { label: "Services & capabilities", hint: "Find the right solution", href: "#services", keywords: "websites integrations apps zoho services" },
   { label: "Start a conversation", hint: "Discuss a project", href: "#contact", keywords: "contact email enquiries project work" },

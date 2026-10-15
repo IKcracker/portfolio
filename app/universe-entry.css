@@ -1,0 +1,6 @@
+.studio-universe-cta{display:none}
+[data-portfolio-version="glass"] .studio-universe-cta{display:inline-flex;align-items:center;gap:13px;margin-top:24px;padding:12px 0;color:#c7f1a8;font:700 10px var(--mono);letter-spacing:.11em;text-decoration:none;border-bottom:1px solid #b6e59e57;transition:gap .2s,color .2s}
+[data-portfolio-version="glass"] .studio-universe-cta:hover{gap:20px;color:#e9ffd1}
+[data-portfolio-version="glass"] .studio-universe-cta>span:first-child{font-size:20px;line-height:1}
+[data-portfolio-version="glass"] .studio-universe-cta>span:last-child{font-size:15px}
+@media(prefers-reduced-motion:reduce){[data-portfolio-version="glass"] .studio-universe-cta{transition:none}}
