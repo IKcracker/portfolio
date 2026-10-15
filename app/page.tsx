@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 
 const projects = [
-  { index:"01", name:"NexStock", category:"SAAS PRODUCT / INVENTORY", description:"A connected inventory platform designed to simplify product operations and integrations.", url:"https://www.nexstock.co.za/", art:"nexstock", mark:"NS.", label:"Inventory, connected.", action:"Visit product" },
+  { index:"01", name:"VelaBridge", category:"CORPORATE WEBSITE / DEMO", description:"A responsive corporate website concept with clear service positioning, elegant design, and a direct path to enquiry.", url:"https://velabridge.vercel.app/", art:"velabridge", mark:"VB.", label:"A clearer digital presence.", action:"Explore live demo" },
   { index:"02", name:"Noval Logistics", category:"LOGISTICS / CRM DEMO", description:"A logistics management concept exploring shipment visibility and clearer business workflows.", url:"https://noval-logistics.vercel.app/", art:"noval", mark:"N—L", label:"Moving operations forward.", action:"Explore demo" },
   { index:"03", name:"Vaya", category:"MOBILITY / IN DEVELOPMENT", description:"An intercity ride-sharing concept built around clearer journeys and practical travel planning.", url:"https://vaya-wego.vercel.app/", art:"vaya", mark:"vaya.", label:"A different way to get there.", action:"Explore concept" },
 ];
@@ -49,7 +49,28 @@ export default function Home() { return <div className="site">
       <Kicker index="02">Selected projects</Kicker><div className="section-heading"><h2 id="work-title">Work worth showing<span>.</span></h2><p>A selection of the software products and digital experiences I&apos;m building.</p></div>
       <div className="project-list">{projects.map(item=><article className="project" key={item.index}>
         <span className="index project-number">{item.index}</span><div className="project-info"><span className="project-tag">{item.category}</span><h3>{item.name}</h3><p>{item.description}</p><a href={item.url} target="_blank" rel="noopener noreferrer" className="project-link">{item.action} <Arrow diagonal/><span className="visually-hidden">(opens in new tab)</span></a></div>
-        <a href={item.url} target="_blank" rel="noopener noreferrer" className={"project-art project-art--"+item.art} aria-label={"Explore "+item.name+" (opens in new tab)"}><Image src={`/images/projects/${item.art}-preview.svg`} alt={`${item.name} project interface concept preview`} width={1100} height={680} unoptimized className="project-preview-img"/><span className="project-art-label">{item.label}</span><span className="art-arrow"><Arrow diagonal/></span></a>
+        <div className={"project-art project-art--"+item.art}>
+          <div className="project-browser-bar" aria-hidden="true">
+            <span className="browser-controls"><i/><i/><i/></span>
+            <span className="project-domain">{new URL(item.url).hostname}</span>
+            <span className="project-live-label">LIVE PAGE</span>
+          </div>
+          <div className="project-live-viewport">
+            <iframe
+              title={item.name+" live website preview"}
+              src={item.url}
+              loading="lazy"
+              tabIndex={-1}
+              aria-hidden="true"
+              sandbox="allow-same-origin allow-scripts allow-forms"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+          <a className="project-art-cover" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={"Open the "+item.name+" live website in a new tab"}>
+            <span className="project-art-label">Live website preview</span>
+            <span className="art-arrow"><Arrow diagonal/></span>
+          </a>
+        </div>
       </article>)}</div>
       <a href="https://www.codetechagency.com/work" target="_blank" rel="noopener noreferrer" className="underlined more-work">Explore more projects at Code Tech Agency <Arrow diagonal/></a>
     </div></section>
