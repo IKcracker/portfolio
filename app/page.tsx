@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ProjectScreenshot from "./project-screenshot";
 import SiteInteractions from "./site-interactions";
+import ThemeToggle from "./theme-toggle";
 import type { ReactNode } from "react";
 import { clientWork, cvHref, email, experience, github, lab, linkedin, stack } from "./career-content";
 
@@ -31,7 +32,7 @@ function PortfolioContent() { return <div className="site">
   <header className="header container" id="top">
     <a href="#top" className="logo" aria-label="Kutullo Moropane home">kutullo<span>.</span></a>
     <nav className="nav-desktop" aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
-    <a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
+    <ThemeToggle/><a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
     <details className="nav-mobile"><summary>Menu <span>+</span></summary><nav aria-label="Mobile navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></details>
   </header>
   <main id="main">

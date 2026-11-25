@@ -22,7 +22,7 @@ Client names are intentionally left out of the client work section.
 
 ## Styles
 
-`app/globals.css` holds the design tokens (`--paper`, `--ink`, `--body`, `--olive`, `--rule`) and the main layout. `app/career.css` styles the experience, client work and in-development sections, and `app/discovery.css` the ⌘K explorer and scroll reveals.
+`app/globals.css` holds the design tokens (`--paper`, `--ink`, `--body`, `--olive`, `--rule`) and the main layout. `app/career.css` styles the experience, client work and in-development sections, and `app/discovery.css` the ⌘K explorer and scroll reveals. `app/theme.css` holds the dark theme; `app/theme-toggle.tsx` switches it and the inline script in `layout.tsx` applies the saved or system theme before the first paint.
 
 ## Development
 
