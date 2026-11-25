@@ -73,7 +73,7 @@ export default function KineticField() {
         ctx.lineWidth = 1;
         ctx.stroke();
       }
-      dots.forEach((dot, i) => {
+      dots.forEach((dot) => {
         const angle = dot.angle + elapsed * dot.speed;
         const radius = dot.radius;
         let x = centerX + Math.cos(angle) * rx * (1.12 + radius);

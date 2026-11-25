@@ -64,6 +64,8 @@ function UniverseExperience(){
   };
   const gl=getGl();
   if(gl){
+   // WebGL support can only be detected in the browser after mount, so this effect syncs that external capability into state.
+   // eslint-disable-next-line react-hooks/set-state-in-effect
    try{engine=createUniverseEngine(gl);setSupported(true);}
    catch(error){console.warn("3D shader unavailable; accessible project navigator remains active.",error);setSupported(false);}
   }else setSupported(false);
@@ -82,8 +84,8 @@ function UniverseExperience(){
     const button=markerRefs.current[i];
     if(!button)return;
     const t=i*Math.PI*.5-.7;
-    let x=Math.cos(t)*1.83;
-    let y=Math.sin(t*1.6)*.49;
+    const x=Math.cos(t)*1.83;
+    const y=Math.sin(t*1.6)*.49;
     let z=Math.sin(t)*1.18;
     const ca=Math.cos(r.yaw*.9),sa=Math.sin(r.yaw*.9);
     const nx=x*ca+z*sa,nz=z*ca-x*sa;

@@ -1,0 +1,92 @@
+/* Career sections: in-development products, experience timeline, toolkit and client work.
+   Built on the shared tokens so both Classic and Studio designs pick them up automatically. */
+
+/* In the lab — products in development (inside #work) */
+.wip{margin-top:70px}
+.wip-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:1px solid var(--rule);padding-bottom:16px}
+.wip-head .small-label{margin:0}
+.wip-note{font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--body)}
+.wip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.wip-item{padding:28px 0 6px;display:flex;flex-direction:column;align-items:flex-start}
+.wip-item h3{font:500 36px/1 var(--serif);letter-spacing:-.04em;margin:14px 0 13px}
+.wip-item p{font-size:13px;line-height:1.85;color:var(--body);margin:0 0 14px;max-width:360px}
+.wip-item .wip-stack{font:500 10px/1.6 var(--mono);letter-spacing:.05em;color:var(--olive);margin-top:auto}
+
+/* Experience */
+.experience{background:var(--paper);border-top:1px solid var(--rule)}
+.timeline{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.timeline-item{display:grid;grid-template-columns:minmax(220px,34%) 1fr;gap:40px;padding:38px 0;border-bottom:1px solid var(--rule)}
+.timeline-meta h3{font:500 40px/1.02 var(--serif);letter-spacing:-.04em;margin:14px 0 9px}
+.timeline-meta p{font-size:13px;color:var(--body);margin:0}
+.timeline-body ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.timeline-body ul li{position:relative;padding-left:22px;font-size:14px;line-height:1.85;color:var(--body);max-width:640px}
+.timeline-body ul li:before{content:"";position:absolute;left:0;top:.85em;width:9px;height:1px;background:var(--olive)}
+.progression{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px}
+.progression li{position:relative;font:500 10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--body);padding:7px 11px;border:1px solid var(--rule);border-radius:999px}
+.progression li+li:before{content:"→";position:absolute;left:-19px;top:50%;transform:translateY(-50%);color:var(--olive)}
+.progression li.is-current{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+
+.stack{margin-top:64px}
+.stack-grid{margin:0;display:grid;grid-template-columns:repeat(5,1fr);gap:28px}
+.stack-row{border-top:1px solid var(--rule);padding-top:18px}
+.stack-row dt{font:500 24px var(--serif);letter-spacing:-.02em;margin-bottom:10px}
+.stack-row dd{margin:0;font-size:12px;line-height:1.8;color:var(--body)}
+
+/* Client work */
+.client-work{background:white}
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.case{position:relative;border-top:1px solid #cbd1c7;padding:26px 0 10px;display:flex;flex-direction:column}
+.case-top{min-height:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.case-badge{font:600 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:#e4e9de;padding:6px 9px;border-radius:999px}
+.case h3{font:500 33px/1.08 var(--serif);letter-spacing:-.02em;margin:24px 0 13px}
+.case p{max-width:340px;font-size:13px;line-height:1.85;color:var(--body);margin:0 0 16px}
+.case .case-stack{font:500 10px/1.6 var(--mono);letter-spacing:.05em;color:var(--olive);margin-top:auto}
+
+/* Contact: secondary actions and direct links */
+.contact-action>a.is-secondary{background:transparent;color:#e4e9de;border:1px solid #66776a}
+.contact-action>a.is-secondary:hover{background:#ffffff14;color:#fff}
+.contact-action .contact-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:6px}
+.contact-action .contact-links a{border-bottom:1px solid currentColor;padding-bottom:2px;color:#dfe7dc}
+
+/* Studio (glass) design */
+[data-portfolio-version="glass"] .experience{background:#0c1511;border-top:1px solid #b3e6ad1d}
+[data-portfolio-version="glass"] .client-work{background:linear-gradient(155deg,#14221a,#0a1410 75%);border-block:1px solid #a6e5a322}
+[data-portfolio-version="glass"] .timeline-meta h3,[data-portfolio-version="glass"] .wip-item h3{font-family:var(--sans);font-weight:800;letter-spacing:-.05em;color:#eef5e9}
+[data-portfolio-version="glass"] .timeline-meta h3{font-size:34px}
+[data-portfolio-version="glass"] .wip-item h3{font-size:30px}
+[data-portfolio-version="glass"] .progression li{border-color:#c8efa733;color:#b8c9bd}
+[data-portfolio-version="glass"] .progression li.is-current{background:var(--olive);color:#0b1610;border-color:var(--olive)}
+[data-portfolio-version="glass"] .stack-row{border:1px solid #c5f5a32f;border-radius:14px;padding:20px;background:linear-gradient(150deg,#1d3326a8,#1120189c)}
+[data-portfolio-version="glass"] .stack-row dt{color:#f2f8ed}
+[data-portfolio-version="glass"] .wip-grid{gap:17px;margin-top:22px}
+[data-portfolio-version="glass"] .wip-head{border-color:#c8efa720}
+[data-portfolio-version="glass"] .wip-item{padding:26px;border:1px solid #c8efa720;border-radius:17px;background:linear-gradient(125deg,#1c30269e,#13221b96);backdrop-filter:blur(11px)}
+[data-portfolio-version="glass"] .case-grid{gap:17px}
+[data-portfolio-version="glass"] .case{min-height:320px;padding:30px;border:1px solid #c5f5a32f;border-radius:17px;background:linear-gradient(150deg,#1d3326a8,#1120189c);backdrop-filter:blur(15px);box-shadow:0 16px 40px #00000030;transition:transform .3s,border-color .3s}
+[data-portfolio-version="glass"] .case:hover{transform:translateY(-8px);border-color:#bbefaa80}
+[data-portfolio-version="glass"] .case h3{font:500 36px/1.08 var(--serif);color:#f2f8ed;margin:38px 0 16px}
+[data-portfolio-version="glass"] .case p{color:#b8c9bd}
+[data-portfolio-version="glass"] .case-badge{background:#c9f39f;color:#132018}
+[data-portfolio-version="glass"] .contact-action>a.is-secondary{background:transparent;color:#d5f4c1;border:1px solid #a9d79366}
+[data-portfolio-version="glass"] .contact-action>a.is-secondary:hover{background:#c9f39f1a}
+
+@media(max-width:1100px){
+  .stack-grid{grid-template-columns:repeat(3,1fr)}
+  .wip-grid,.case-grid{gap:26px}
+}
+@media(max-width:760px){
+  .wip{margin-top:50px}
+  .wip-head{flex-direction:column;gap:6px}
+  .wip-grid,.case-grid{grid-template-columns:1fr;gap:0}
+  [data-portfolio-version="glass"] .wip-grid,[data-portfolio-version="glass"] .case-grid{gap:14px}
+  .timeline-item{grid-template-columns:1fr;gap:20px;padding:30px 0}
+  .progression{flex-direction:column;align-items:flex-start;gap:20px}
+  .progression li+li:before{content:"↓";left:14px;top:-17px;transform:none}
+  .timeline-meta h3{font-size:34px}
+  .timeline-body ul li{font-size:13px}
+  .stack{margin-top:48px}
+  .stack-grid{grid-template-columns:1fr;gap:18px}
+  .case{padding:25px 0 26px}
+  [data-portfolio-version="glass"] .case{min-height:0;padding:24px}
+  .case h3{margin:18px 0 10px}
+}

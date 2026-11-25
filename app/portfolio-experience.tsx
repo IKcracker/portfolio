@@ -11,6 +11,8 @@ export function PortfolioExperience({ children }: { children: ReactNode }) {
   const [version, setVersion] = useState<DesignVersion>("glass");
 
   useEffect(() => {
+    // The saved design and ?design= query only exist in the browser, so they are read after hydration.
+    /* eslint-disable react-hooks/set-state-in-effect */
     try {
       const url = new URL(window.location.href);
       const query = url.searchParams.get("design");
@@ -21,6 +23,7 @@ export function PortfolioExperience({ children }: { children: ReactNode }) {
     } catch {
       // Browsers with storage disabled can still switch versions in this session.
     }
+    /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
   const changeVersion = useCallback((nextVersion: DesignVersion) => {
