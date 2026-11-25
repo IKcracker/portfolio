@@ -1,0 +1,197 @@
+/* Studio / project cinema and interactive surfaces */
+[data-portfolio-version="glass"] .work{
+  background:#0e1714;color:#eef6e9;position:relative;
+  border-block:1px solid #a5dfa21b;
+}
+[data-portfolio-version="glass"] .work::before{
+  content:"";position:absolute;right:-15%;top:3%;height:640px;width:640px;
+  border-radius:50%;background:#284b3433;filter:blur(110px);pointer-events:none;
+}
+[data-portfolio-version="glass"] .section-heading h2,
+[data-portfolio-version="glass"] .display{
+  font-family:var(--sans);font-weight:800;font-size:clamp(56px,6vw,92px);
+  letter-spacing:-.073em;line-height:.99;color:#eef5e9;
+}
+[data-portfolio-version="glass"] .section-heading h2 em{
+  font-family:var(--serif);font-weight:500;letter-spacing:-.035em;color:var(--olive);
+}
+[data-portfolio-version="glass"] .section-heading h2>span,
+[data-portfolio-version="glass"] .display span{color:var(--olive)}
+[data-portfolio-version="glass"] .section-heading>p{color:#b0c0b2;font-size:14px;line-height:1.8}
+[data-portfolio-version="glass"] .project-list{border:0;display:grid;gap:35px}
+[data-portfolio-version="glass"] .project{
+  display:grid;grid-template-columns:55px minmax(225px,.65fr) minmax(0,1fr);
+  align-items:center;gap:15px;min-height:360px;margin:0;
+  border:1px solid #c8efa720;padding:23px 27px 23px 18px;
+  background:linear-gradient(125deg,#1c30269e,#13221b96);
+  border-radius:21px;backdrop-filter:blur(11px);
+  box-shadow:0 18px 50px #00000025,inset 0 1px #ffffff0b;
+  transition:border-color .25s,box-shadow .25s,transform .25s;
+}
+[data-portfolio-version="glass"] .project:hover{
+  transform:translateY(-5px);border-color:#c3edab6e;
+  box-shadow:0 30px 60px #0000004a,inset 0 1px #c4e9b81d;
+}
+[data-portfolio-version="glass"] .project-number{
+  margin-top:20px;font:600 12px var(--mono);color:#b8e89e;
+  align-self:start;
+}
+[data-portfolio-version="glass"] .project-info h3{
+  font-family:var(--sans);font-weight:800;font-size:clamp(32px,3.4vw,54px);
+  color:#f0f6eb;letter-spacing:-.06em;line-height:1.02;margin:18px 0;
+}
+[data-portfolio-version="glass"] .project-tag{color:#afe8a0;letter-spacing:.12em}
+[data-portfolio-version="glass"] .project-info>p{
+  max-width:360px;color:#b2c7b7;font-size:13px;line-height:1.9;margin-bottom:25px;
+}
+[data-portfolio-version="glass"] .project-link{
+  display:inline-flex;gap:12px;align-items:center;
+  padding:11px 15px;background:#c8f39d;border:1px solid #c8f39d;
+  border-radius:9px;color:#152217;font-weight:800;box-shadow:0 8px 25px #b8ef831b;
+}
+[data-portfolio-version="glass"] .project-link:hover{color:#152217;background:#edffd9;border-color:#edffd9}
+[data-portfolio-version="glass"] .project-art{
+  border:1px solid #f3fff23d;border-radius:14px;
+  background:#233c2e;box-shadow:0 17px 45px #050d0799;
+  transform:perspective(1100px) rotateY(-2deg);transform-style:preserve-3d;
+  transition:transform .35s cubic-bezier(.2,.75,.3,1),box-shadow .35s;
+}
+[data-portfolio-version="glass"] .project:hover .project-art{
+  transform:perspective(1100px) rotateY(0deg) translateY(-3px);
+  box-shadow:0 22px 55px #0000009c;
+}
+[data-portfolio-version="glass"] .project-browser-bar{
+  background:#d9e3d8eb;color:#31493c;border-bottom:1px solid #a7b9aa;
+}
+[data-portfolio-version="glass"] .project-domain{color:#425b4a}
+[data-portfolio-version="glass"] .project-live-label{color:#366644}
+[data-portfolio-version="glass"] .project-art-cover{
+  background:linear-gradient(to top,#06120c53,transparent 46%);
+}
+[data-portfolio-version="glass"] .project-art-label{
+  background:#0d2418e8;border:1px solid #c3efae69;color:#d9f8ca;border-radius:8px;
+  padding:11px 14px;backdrop-filter:blur(12px);
+}
+[data-portfolio-version="glass"] .art-arrow{background:#cbf5a4;color:#172217;border:0}
+[data-portfolio-version="glass"] .more-work{color:#d3f5c0;border-color:#b9e9a1;margin-top:43px}
+[data-portfolio-version="glass"] .more-work:hover{color:#fff;border-color:#fff}
+[data-portfolio-version="glass"] .about{padding-block:145px 155px}
+[data-portfolio-version="glass"] .about>.display{margin-bottom:64px}
+[data-portfolio-version="glass"] .about-photo{
+  background:#172c21;border:1px solid #b9e6af3d;border-radius:20px;
+  box-shadow:0 30px 70px #0005;overflow:hidden;
+}
+[data-portfolio-version="glass"] .about-photo .workspace{
+  filter:saturate(.64) contrast(1.08);
+  transition:filter .7s ease,transform .7s ease;
+}
+[data-portfolio-version="glass"] .about-photo:hover .workspace{
+  filter:saturate(1) contrast(1.01);transform:scale(1.04);
+}
+[data-portfolio-version="glass"] .about-photo>span{
+  border:1px solid #d8ffd447;background:#0b1a12dc;border-radius:7px;
+  padding:12px 16px;backdrop-filter:blur(16px);
+}
+[data-portfolio-version="glass"] .about-text h3{
+  font:500 clamp(51px,5vw,79px)/.99 var(--serif);
+  color:#eef5eb;letter-spacing:-.04em;
+}
+[data-portfolio-version="glass"] .about-text h3 em{color:#c9f29c}
+[data-portfolio-version="glass"] .about-text p{color:#b2c4b8;line-height:2}
+[data-portfolio-version="glass"] .about-text .underlined{
+  color:#d5f4c1;border-color:#a9d793;
+}
+[data-portfolio-version="glass"] .services{
+  padding-block:130px 145px;background:linear-gradient(155deg,#14221a,#0a1410 75%);
+  border-block:1px solid #a6e5a322;
+}
+[data-portfolio-version="glass"] .services .section-heading h2{max-width:850px}
+[data-portfolio-version="glass"] .service-grid{gap:17px}
+[data-portfolio-version="glass"] .service{
+  min-height:290px;position:relative;isolation:isolate;overflow:hidden;
+  padding:30px;border:1px solid #c5f5a32f;border-radius:17px;
+  background:linear-gradient(150deg,#1d3326a8,#1120189c);
+  backdrop-filter:blur(15px);box-shadow:0 16px 40px #00000030;
+  transition:transform .3s,border-color .3s,box-shadow .3s;
+}
+[data-portfolio-version="glass"] .service::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:165px;height:165px;
+  border:1px solid #bceba131;border-radius:50%;pointer-events:none;transition:transform .4s;
+}
+[data-portfolio-version="glass"] .service:hover{
+  transform:translateY(-8px);border-color:#bbefaa80;box-shadow:0 24px 46px #00000050;
+}
+[data-portfolio-version="glass"] .service:hover::after{transform:scale(1.55)}
+[data-portfolio-version="glass"] .service h3{font:500 39px/1.08 var(--serif);color:#f2f8ed;margin:42px 0 18px}
+[data-portfolio-version="glass"] .service p{color:#b8c9bd;line-height:1.95}
+[data-portfolio-version="glass"] .service .index{font-size:12px}
+[data-portfolio-version="glass"] .service>a{right:28px;top:28px;color:#c9f1a4}
+[data-portfolio-version="glass"] .interaction-lab-area{
+  border-top:1px solid #b3e6ad1d;background:#0c1511;padding-block:140px;
+}
+[data-portfolio-version="glass"] .lab-heading h2{
+  color:#eef5e8;font:800 clamp(53px,5.5vw,85px)/1 var(--sans);letter-spacing:-.065em;
+}
+[data-portfolio-version="glass"] .lab-heading h2 em{
+  font-family:var(--serif);font-size:1.14em;color:#cbf5a8;font-weight:500;
+}
+[data-portfolio-version="glass"] .lab-intro,
+[data-portfolio-version="glass"] .lab-hint{color:#adc5b0!important}
+[data-portfolio-version="glass"] .lab-scenario:not(.active){
+  background:#14291ba8;color:#c9e1cd;border-color:#bfecb639;
+}
+[data-portfolio-version="glass"] .lab-scenario.active{
+  background:#c8f39d;border-color:#c8f39d;color:#122017;
+}
+[data-portfolio-version="glass"] .lab-scenario.active .lab-scenario-num{color:#516f46}
+[data-portfolio-version="glass"] .lab-surface{
+  background:#14241bae;border-color:#bfeaa52f;
+  box-shadow:0 24px 60px #00000045;backdrop-filter:blur(16px);
+}
+[data-portfolio-version="glass"] .lab-surface-head{
+  background:#1c3223;color:#aac9b0;border-color:#baeab52b;
+}
+[data-portfolio-version="glass"] .lab-surface-head>span:first-child{color:#d6f2d8}
+[data-portfolio-version="glass"] .lab-flow-title h3{color:#f2f7ee}
+[data-portfolio-version="glass"] .lab-node-label{color:#d6e9d4}
+[data-portfolio-version="glass"] .lab-node-circle{background:#243d2a;border-color:#b5e2a34b}
+[data-portfolio-version="glass"] .lab-node-circle span{color:#bbe7b1}
+[data-portfolio-version="glass"] .lab-node.is-current .lab-node-circle{background:#c8f39d}
+[data-portfolio-version="glass"] .lab-node.is-current .lab-node-circle span{color:#152218}
+[data-portfolio-version="glass"] .lab-node.is-current .lab-node-label{color:#c9f3a4}
+[data-portfolio-version="glass"] .lab-node-type{color:#9eb4a4}
+[data-portfolio-version="glass"] .lab-explorer-bottom{border-color:#bddbb82b}
+[data-portfolio-version="glass"] .lab-explorer-bottom p{color:#bdd1c1}
+[data-portfolio-version="glass"] .lab-inspector{
+  background:linear-gradient(145deg,#254032,#1a3126);border-color:#bce8ac26;
+}
+[data-portfolio-version="glass"] .lab-inspector h4{color:#f3f9ed}
+[data-portfolio-version="glass"] .lab-stage-description{color:#c3d7c7}
+[data-portfolio-version="glass"] .lab-inspector-top{color:#c1d8c2}
+[data-portfolio-version="glass"] .lab-inspector-active{color:#c4f09b}
+[data-portfolio-version="glass"] .lab-mechanics-toggle{color:#d9f2d7;border-color:#bfeab531}
+[data-portfolio-version="glass"] .lab-mechanics{background:#ffffff0a;border-color:#c1e6b83f}
+[data-portfolio-version="glass"] .lab-mechanics p:last-child{color:#bcd3bd}
+[data-portfolio-version="glass"] .lab-inspector-bottom{border-color:#bdedb53d}
+[data-portfolio-version="glass"] .lab-inspector-bottom code{color:#c0edae}
+[data-portfolio-version="glass"] .lab-inspector-bottom button{
+  background:#c8f39d;color:#122019;font-weight:800;
+}
+[data-portfolio-version="glass"] .lab-footer{
+  background:#1b3022;border-color:#bed8b227;
+}
+[data-portfolio-version="glass"] .lab-footer p{color:#bccebc}
+[data-portfolio-version="glass"] .lab-footer a{color:#ddf7d1;border-color:#aadf9c}
+[data-portfolio-version="glass"] .contact{
+  position:relative;background:radial-gradient(ellipse at 85% 50%,#426a3b 0%,transparent 45%),#101e17;
+  border-top:1px solid #bbebae31;
+}
+[data-portfolio-version="glass"] .contact h2{font:800 clamp(62px,6.4vw,99px)/.99 var(--sans);letter-spacing:-.066em;color:#f3f9ed}
+[data-portfolio-version="glass"] .contact h2 em{font:500 1.1em/.9 var(--serif);color:#cbf1a2}
+[data-portfolio-version="glass"] .contact .kicker{color:#bde6b2}
+[data-portfolio-version="glass"] .contact p:not(.kicker){color:#c2d7c5}
+[data-portfolio-version="glass"] .contact-action>a{background:#c9f39f;color:#132018;border:0;border-radius:10px}
+[data-portfolio-version="glass"] .contact-action>a:hover{background:#e9ffd6}
+[data-portfolio-version="glass"] .contact-action>span{color:#b1c9b3}
+[data-portfolio-version="glass"] .footer{background:#09120d;color:#a9c7a5}
+[data-portfolio-version="glass"] .footer .logo{color:#ecf3e9}
