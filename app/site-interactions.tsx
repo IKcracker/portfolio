@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 
 const destinations = [
-  { label: "Explore selected work", hint: "Projects & real demos", href: "#work", keywords: "portfolio cases demos vela noval vaya codedevcloud dibcia lovebind lab" },
+  { label: "Explore selected work", hint: "Projects & real demos", href: "#work", keywords: "portfolio cases demos vela noval vaya mysol mining swe red strata construction codedevcloud dibcia lovebind lab" },
   { label: "Explore the interactive 3D universe", hint: "Rotate a living software system", href: "#universe", keywords: "how automation works workflow logistics build crm" },
   { label: "Experience", hint: "Roles, promotions & toolkit", href: "#experience", keywords: "experience cv resume infolytics zoho skills stack career hire" },
   { label: "Client work", hint: "Systems in production", href: "#client-work", keywords: "case studies zoho integration fsm finance automation clients" },
