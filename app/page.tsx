@@ -9,7 +9,7 @@ const projects = [
   { index:"01", name:"VelaBridge", category:"CORPORATE WEBSITE / DEMO", description:"A responsive corporate website concept with clear service positioning, elegant design, and a direct path to enquiry.", url:"https://velabridge.vercel.app/", art:"velabridge", mark:"VB.", label:"A clearer digital presence.", action:"Explore live demo" },
   { index:"02", name:"Noval Logistics", category:"LOGISTICS / CRM DEMO", description:"A logistics management concept exploring shipment visibility and clearer business workflows.", url:"https://noval-logistics.vercel.app/", art:"noval", mark:"N—L", label:"Moving operations forward.", action:"Explore demo" },
   { index:"03", name:"MySol Central", category:"ENTERPRISE OPERATIONS / DEMO", description:"A connected operations platform for a fictional mining group: executive dashboard, sites, fleet, maintenance, contracts and workforce, with a guided demo from pit to boardroom.", url:"https://mysol-central-demo.vercel.app/", art:"mysol", mark:"MS.", label:"From the pit to the boardroom.", action:"Explore live demo" },
-  { index:"04", name:"SWE Red", category:"LOGISTICS / PROPOSAL DEMO", description:"A courier and freight proposal with service pages, an illustrative hub network, demo shipment tracking, a quote flow and an operations admin for shipment records.", url:"https://swe-red.vercel.app/", art:"swe", mark:"SWE", label:"Logistics built to move faster.", action:"Explore live demo" },
+  { index:"04", name:"SWE Red", category:"LOGISTICS / PROPOSAL DEMO", description:"A courier and freight proposal with service pages, an illustrative hub network, demo shipment tracking, a quote flow and an operations admin for shipment records.", url:"https://swe-red.vercel.app/", image:"/images/projects/swe-red.webp", art:"swe", mark:"SWE", label:"Logistics built to move faster.", action:"Explore live demo" },
   { index:"05", name:"STRATA", category:"CONSTRUCTION / CONCEPT WEBSITE", description:"A construction and civil works concept with services, illustrative projects, a materials catalogue, quote requests and account sign-up with password recovery.", url:"https://construction-two-coral.vercel.app/", art:"strata", mark:"ST.", label:"The foundations of tomorrow.", action:"Explore concept" },
   { index:"06", name:"Vaya", category:"MOBILITY / IN DEVELOPMENT", description:"An intercity ride-sharing concept built around clearer journeys and practical travel planning.", url:"https://vaya-wego.vercel.app/", art:"vaya", mark:"vaya.", label:"A different way to get there.", action:"Explore concept" },
 ];
@@ -62,7 +62,7 @@ function PortfolioContent() { return <div className="site">
             <span className="project-domain">{new URL(item.url).hostname}</span>
             <span className="project-live-label">REAL PAGE</span>
           </div>
-          <ProjectScreenshot name={item.name} url={item.url} />
+          <ProjectScreenshot name={item.name} url={item.url} image={"image" in item ? item.image : undefined} />
           <a className="project-art-cover" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={"Open the "+item.name+" live website in a new tab"}>
             <span className="project-art-label">View live demo</span>
             <span className="art-arrow"><Arrow diagonal/></span>

@@ -6,11 +6,12 @@ import { useState } from "react";
 /**
  * Only real captures of the linked public website are shown.
  * A failed capture produces a clear empty state, never a fabricated UI.
- * Static user-provided screenshots can replace the source when uploaded.
+ * A stored screenshot (`image`, a path under /public) is used first when a live capture is unreliable.
  */
-export default function ProjectScreenshot({ name, url }: { name: string; url: string }) {
+export default function ProjectScreenshot({ name, url, image }: { name: string; url: string; image?: string }) {
   const [provider, setProvider] = useState(0);
   const imageUrls = [
+    ...(image ? [image] : []),
     `https://image.thum.io/get/width/1600/crop/1000/noanimate/maxAge/24/${url}`,
     `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=1600`,
   ];
