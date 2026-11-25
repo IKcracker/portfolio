@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent a
 
 const destinations = [
   { label: "Explore selected work", hint: "Projects & real demos", href: "#work", keywords: "portfolio cases demos vela noval vaya mysol mining swe red strata construction codedevcloud dibcia lovebind lab" },
-  { label: "Explore the interactive 3D universe", hint: "Rotate a living software system", href: "#universe", keywords: "how automation works workflow logistics build crm" },
   { label: "Experience", hint: "Roles, promotions & toolkit", href: "#experience", keywords: "experience cv resume infolytics zoho skills stack career hire" },
   { label: "Client work", hint: "Systems in production", href: "#client-work", keywords: "case studies zoho integration fsm finance automation clients" },
   { label: "About Kutullo", hint: "Person behind the code", href: "#about", keywords: "about biography developer engineer" },
@@ -79,7 +78,7 @@ export default function SiteInteractions() {
 
   useEffect(() => {
     if (!("IntersectionObserver" in window) || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const nodes = Array.from(document.querySelectorAll<HTMLElement>(".work .project, .wip-item, .timeline-item, .case, .focus-item, .service, .about-grid > *, .lab-scenario-bar, .lab-surface, .contact-action"));
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>(".work .project, .wip-item, .timeline-item, .case, .focus-item, .service, .about-grid > *, .contact-action"));
     const targets = nodes.filter(node => node.getBoundingClientRect().top > window.innerHeight * .87);
     targets.forEach(node => node.classList.add("is-reveal-pending"));
     const observer = new IntersectionObserver(entries => {
@@ -92,20 +91,6 @@ export default function SiteInteractions() {
     }, { threshold: .07, rootMargin: "0px 0px -25px 0px" });
     targets.forEach(node => observer.observe(node));
     return () => { observer.disconnect(); targets.forEach(node => node.classList.remove("is-reveal-pending", "is-revealed")); };
-  }, []);
-
-  useEffect(() => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
-    function onPointerMove(e: PointerEvent) {
-      if (!(e.target instanceof Element)) return;
-      const tile = e.target.closest<HTMLElement>(".service, .case, .focus-item, .project-art, .lab-inspector");
-      if (!tile) return;
-      const rect = tile.getBoundingClientRect();
-      tile.style.setProperty("--spot-x", (e.clientX - rect.left) + "px");
-      tile.style.setProperty("--spot-y", (e.clientY - rect.top) + "px");
-    }
-    document.addEventListener("pointermove", onPointerMove, { passive: true });
-    return () => document.removeEventListener("pointermove", onPointerMove);
   }, []);
 
   const visit = (href: string) => {

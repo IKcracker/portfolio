@@ -1,9 +1,6 @@
 import Image from "next/image";
 import ProjectScreenshot from "./project-screenshot";
-import SystemUniverse from "./system-universe";
 import SiteInteractions from "./site-interactions";
-import KineticField from "./kinetic-field";
-import { PortfolioExperience, DesignVersionToggle } from "./portfolio-experience";
 import type { ReactNode } from "react";
 import { clientWork, cvHref, email, experience, github, lab, linkedin, stack } from "./career-content";
 
@@ -29,12 +26,12 @@ const services = [
 function Arrow({ diagonal=false }:{ diagonal?:boolean }) { return <svg aria-hidden="true" width="18" height="18" viewBox="0 0 20 20" fill="none">{diagonal ? <path d="M4.5 15.5 15.5 4.5M6 4.5h9.5V14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/> : <path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>}</svg>; }
 function Kicker({ index,children }:{index:string;children:ReactNode}) {return <p className="kicker"><span>{index}</span><span>/</span>{children}</p>;}
 const enquiry = "https://www.codetechagency.com/contact";
-function SharedPortfolioContent() { return <div className="site">
+function PortfolioContent() { return <div className="site">
   <a className="skip" href="#main">Skip to content</a>
   <header className="header container" id="top">
     <a href="#top" className="logo" aria-label="Kutullo Moropane home">kutullo<span>.</span></a>
     <nav className="nav-desktop" aria-label="Main navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav>
-    <DesignVersionToggle/><a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
+    <a className="nav-enquiry" href={enquiry} target="_blank" rel="noopener noreferrer">Let&apos;s talk <Arrow diagonal/></a>
     <details className="nav-mobile"><summary>Menu <span>+</span></summary><nav aria-label="Mobile navigation"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></details>
   </header>
   <main id="main">
@@ -44,21 +41,16 @@ function SharedPortfolioContent() { return <div className="site">
         <p className="role">Zoho developer <span>•</span> Software developer <span>•</span> Founder</p>
         <p className="hero-lead">I build business systems that remove manual work — Zoho solutions, API integrations and full-stack web products — and see them through from scope of work to production.</p>
         <div className="hero-actions"><a href="#work" className="underlined">Explore my work <Arrow/></a><a className="underlined" href={cvHref} target="_blank" rel="noopener noreferrer">Download CV <Arrow diagonal/><span className="visually-hidden">(PDF, opens in new tab)</span></a></div>
-        <a href="#universe" className="studio-universe-cta"><span>✳</span> ENTER THE 3D UNIVERSE <span>↘</span></a>
         <p className="location"><i/> Based in Pretoria, South Africa</p>
       </div>
       <div className="hero-photo">
-        <KineticField/>
-        <div className="kinetic-hud" aria-hidden="true">INTERACTIVE FIELD / MOVE YOUR CURSOR<br/>ENGINEERING MEETS EXPLORATION</div>
         <Image src="/images/kutullo-hero-832c8ce.webp" alt="Black-and-white close-up portrait of Kutullo Moropane" width={610} height={724} sizes="(max-width: 760px) 90vw, (max-width: 1100px) 42vw, 45vw" className="portrait" priority/>
         <span className="vertical-label">Software developer / 2026</span><span className="portrait-index">KM / 01</span>
       </div>
     </section>
-    <div className="kinetic-ticker" aria-hidden="true"><div className="kinetic-ticker-track">{Array.from({length:4},(_,i)=><span key={i}>DESIGN WITH INTENTION <b>✳</b> BUILD WITH PURPOSE <b>✳</b> SYSTEMS THAT WORK <b>✳</b> MADE TO EXPLORE <b>✳</b></span>)}</div></div>
     <section className="focus container" aria-label="Professional focus">
       <p className="small-label">Selected focus</p><div className="focus-grid">{focus.map(([number,title,description])=><div className="focus-item" key={number}><span className="index">{number}</span><h2>{title}</h2><p>{description}</p></div>)}</div>
     </section>
-    <SystemUniverse/>
     <section id="work" className="work area" aria-labelledby="work-title"><div className="container">
       <Kicker index="02">Selected projects</Kicker><div className="section-heading"><h2 id="work-title">Work worth showing<span>.</span></h2><p>A selection of the software products and digital experiences I&apos;m building.</p></div>
       <div className="project-list">{projects.map(item=><article className="project" key={item.index}>
@@ -118,4 +110,4 @@ function SharedPortfolioContent() { return <div className="site">
   <footer className="footer"><div className="container footer-grid"><a href="#top" className="logo">kutullo<span>.</span></a><p>© 2026 Kutullo Moropane. Built with intention.</p><nav aria-label="Footer navigation"><a href={linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={github} target="_blank" rel="noopener noreferrer">GitHub</a><a href={cvHref} target="_blank" rel="noopener noreferrer">CV</a><a href="https://www.codetechagency.com/" target="_blank" rel="noopener noreferrer">Code Tech Agency</a><a href="#top">Back to top ↑</a></nav></div></footer>
 </div>; }
 
-export default function Home() { return <PortfolioExperience><SharedPortfolioContent/><SiteInteractions/></PortfolioExperience>; }
+export default function Home() { return <><PortfolioContent/><SiteInteractions/></>; }
