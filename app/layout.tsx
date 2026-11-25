@@ -1,13 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import "./glass.css";
-import "./lab.css";
 import "./discovery.css";
-import "./kinetic.css";
-import "./kinetic-sections.css";
-import "./kinetic-mobile.css";
-import "./system-universe.css";
-import "./universe-entry.css";
 import "./career.css";
 
 export const metadata: Metadata = {
